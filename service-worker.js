@@ -1,5 +1,6 @@
 var CACHE_NAME = 'wafa-cache-v1';
 var urlsToCache = [
+  '/',
   '/index.html',
   '/asset/avatar.jpg',
   '/asset/wafa.jpg',
