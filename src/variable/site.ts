@@ -4,5 +4,6 @@ export const SITE = {
     name: "Muhammad Wafa",
     avatar: "//github.com/mwafa.png",
     desc: "I am a delevoper",
+    github: "mwafa",
   },
 }
