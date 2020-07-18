@@ -1,4 +1,5 @@
 import { Flex, Image, Heading } from "@chakra-ui/core"
+import { SITE } from "../variable/site"
 
 export const Header: React.FC = () => {
   return (
@@ -11,13 +12,8 @@ export const Header: React.FC = () => {
       p={5}
       bg="cyan.50"
     >
-      <Image
-        borderRadius="50%"
-        mb={5}
-        size="200px"
-        src="//github.com/mwafa.png"
-      />
-      <Heading textAlign="center">Muhammad Wafa</Heading>
+      <Image borderRadius="50%" mb={5} size="200px" src={SITE.profile.avatar} />
+      <Heading textAlign="center">{SITE.profile.name}</Heading>
     </Flex>
   )
 }
