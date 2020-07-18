@@ -3,6 +3,7 @@ import { ThemeProvider, CSSReset, ColorModeProvider } from "@chakra-ui/core"
 import App from "next/app"
 import Head from "next/head"
 import { myTheme } from "../themes/myThemes"
+import { SITE } from "../variable/site"
 
 export default class app extends App {
   render() {
@@ -10,7 +11,7 @@ export default class app extends App {
     return (
       <ThemeProvider theme={myTheme}>
         <Head>
-          <title>Muhammad Wafa</title>
+          <title>{SITE.title}</title>
         </Head>
         <ColorModeProvider value="light">
           <CSSReset />
