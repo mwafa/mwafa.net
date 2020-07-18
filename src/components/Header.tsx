@@ -12,8 +12,19 @@ export const Header: React.FC = () => {
       p={5}
       bg="cyan.50"
     >
-      <Image borderRadius="50%" mb={5} size="200px" src={SITE.profile.avatar} />
-      <Heading textAlign="center">{SITE.profile.name}</Heading>
+      <Image
+        rounded="full"
+        mb={5}
+        maxW="200px"
+        p={3}
+        src={SITE.profile.avatar}
+      />
+      <Heading py={3} textAlign="center">
+        {SITE.profile.name}
+      </Heading>
+      <Heading size="md" fontWeight="normal">
+        {SITE.profile.desc}
+      </Heading>
     </Flex>
   )
 }

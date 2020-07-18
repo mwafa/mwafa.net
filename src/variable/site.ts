@@ -3,5 +3,6 @@ export const SITE = {
   profile: {
     name: "Muhammad Wafa",
     avatar: "//github.com/mwafa.png",
+    desc: "I am a delevoper",
   },
 }
