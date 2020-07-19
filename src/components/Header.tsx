@@ -29,6 +29,7 @@ export const Header: React.FC = () => {
       alignItems="center"
       justifyContent="center"
       minH={["90vh", "100vh"]}
+      overflow="hidden"
       p={5}
       bg="cyan.300"
     >
