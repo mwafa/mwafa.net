@@ -28,11 +28,19 @@ export const Header: React.FC = () => {
       direction="column"
       alignItems="center"
       justifyContent="center"
-      h="100vh"
+      minH={["90vh", "100vh"]}
+      overflow="hidden"
       p={5}
       bg="cyan.300"
     >
-      <Box w="100%" h="100vh" zIndex={0} pos="absolute" top={0}>
+      <Box
+        w="100%"
+        h={["90vh", "100vh"]}
+        overflow="hidden"
+        zIndex={0}
+        pos="absolute"
+        top={0}
+      >
         <Particles params={PARTICLES_CONFIG} height="100vh" />
       </Box>
       <Flex
