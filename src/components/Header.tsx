@@ -2,6 +2,7 @@ import { Flex, Image, Heading, Box, IconButton } from "@chakra-ui/core"
 import { SITE } from "../variable/site"
 import Particles from "react-particles-js"
 import { PARTICLES_CONFIG } from "../variable/particles"
+import { SocialIcons } from "./SocialIcons"
 
 export const Header: React.FC = () => {
   return (
@@ -31,6 +32,7 @@ export const Header: React.FC = () => {
         <Heading size="md" fontWeight="normal">
           {SITE.profile.desc}
         </Heading>
+        <SocialIcons />
       </Flex>
       <IconButton
         size="lg"
