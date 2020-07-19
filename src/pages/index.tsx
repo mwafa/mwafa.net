@@ -1,5 +1,6 @@
 import { Header } from "../components/Header"
 import { Flex } from "@chakra-ui/core"
+import { SectionExperience } from "../components/SectionExperie"
 
 export default () => {
   return (
@@ -11,6 +12,7 @@ export default () => {
       bg="cyan.50"
     >
       <Header />
+      <SectionExperience />
     </Flex>
   )
 }
