@@ -1,18 +1,8 @@
 import { Header } from "../components/Header"
 import { Flex } from "@chakra-ui/core"
-import { useEffect, useState } from "react"
-import { userLangStat, LangCount } from "../services/langstat"
-import { SITE } from "../variable/site"
+import { SectionExperience } from "../components/SectionExperie"
 
 export default () => {
-  const [data, setData] = useState<LangCount[]>()
-  useEffect(() => {
-    const fetchData = async () => {
-      const data = await userLangStat(SITE.profile.github)
-      setData(data)
-    }
-    fetchData()
-  }, [])
   return (
     <Flex
       direction="column"
@@ -22,6 +12,7 @@ export default () => {
       bg="cyan.50"
     >
       <Header />
+      <SectionExperience />
     </Flex>
   )
 }
