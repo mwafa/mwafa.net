@@ -1,10 +1,26 @@
-import { Flex, Image, Heading, Box, IconButton } from "@chakra-ui/core"
+import {
+  Flex,
+  Image,
+  Heading,
+  Box,
+  IconButton,
+  Skeleton,
+} from "@chakra-ui/core"
 import { SITE } from "../variable/site"
 import Particles from "react-particles-js"
 import { PARTICLES_CONFIG } from "../variable/particles"
 import { SocialIcons } from "./SocialIcons"
+import { useEffect, useState } from "react"
 
 export const Header: React.FC = () => {
+  const [loaded, setLoaded] = useState<boolean>(false)
+
+  useEffect(() => {
+    setTimeout(() => {
+      setLoaded(true)
+    }, 1000)
+  }, [])
+
   return (
     <Flex
       w="100%"
@@ -18,14 +34,21 @@ export const Header: React.FC = () => {
       <Box w="100%" h="100vh" zIndex={0} pos="absolute" top={0}>
         <Particles params={PARTICLES_CONFIG} height="100vh" />
       </Box>
-      <Flex mt="15vh" alignItems="center" direction="column" zIndex={2}>
-        <Image
-          shadow="8px 5px 20px gray"
-          rounded="full"
-          mb={5}
-          maxW="200px"
-          src={SITE.profile.avatar}
-        />
+      <Flex
+        mt={["20px", "15vh"]}
+        alignItems="center"
+        direction="column"
+        zIndex={2}
+      >
+        <Skeleton isLoaded={loaded} maxW="200px" maxH="200px" rounded="full">
+          <Image
+            shadow="8px 5px 20px gray"
+            rounded="full"
+            mb={5}
+            maxW="200px"
+            src={SITE.profile.avatar}
+          />
+        </Skeleton>
         <Heading py={3} textAlign="center">
           {SITE.profile.name}
         </Heading>
