@@ -1,5 +1,5 @@
 import { Header } from "../components/Header"
-import { Flex, Box } from "@chakra-ui/core"
+import { Flex } from "@chakra-ui/core"
 import { useEffect, useState } from "react"
 import { userLangStat, LangCount } from "../services/langstat"
 import { SITE } from "../variable/site"
@@ -22,7 +22,6 @@ export default () => {
       bg="cyan.50"
     >
       <Header />
-      <Box>{JSON.stringify(data)}</Box>
     </Flex>
   )
 }
