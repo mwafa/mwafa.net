@@ -7,7 +7,7 @@ export const SectionExperience: React.FC = () => {
       direction="column"
       alignItems="center"
       minH="70vh"
-      p={10}
+      p={[2, 10]}
       bg={"gray.50"}
       w="100%"
     >
