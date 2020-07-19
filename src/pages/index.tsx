@@ -1,6 +1,6 @@
 import { Header } from "../components/Header"
 import { Flex } from "@chakra-ui/core"
-import { SectionExperience } from "../components/SectionExperie"
+import { SectionExperience } from "../components/SectionExperience"
 
 export default () => {
   return (
