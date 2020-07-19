@@ -11,6 +11,7 @@ import Particles from "react-particles-js"
 import { PARTICLES_CONFIG } from "../variable/particles"
 import { SocialIcons } from "./SocialIcons"
 import { useEffect, useState } from "react"
+import { Link, Element } from "react-scroll"
 
 export const Header: React.FC = () => {
   const [loaded, setLoaded] = useState<boolean>(false)
@@ -57,18 +58,22 @@ export const Header: React.FC = () => {
         </Heading>
         <SocialIcons />
       </Flex>
-      <IconButton
-        size="lg"
-        mt="auto"
-        rounded="full"
-        variantColor="teal"
-        aria-label="more"
-        icon="chevron-down"
-        shadow="3px 3px 5px #555"
-        _hover={{
-          transform: "translate(0px, -5px) scale(1.2)",
-        }}
-      />
+      <Box mt="auto">
+        <Link to="section1" duration={500} spy={true} smooth={true}>
+          <IconButton
+            size="lg"
+            rounded="full"
+            variantColor="teal"
+            aria-label="more"
+            icon="chevron-down"
+            shadow="3px 3px 5px #555"
+            _hover={{
+              transform: "translate(0px, -5px) scale(1.2)",
+            }}
+          />
+        </Link>
+        <Element name="section1" width="100vw" />
+      </Box>
     </Flex>
   )
 }
