@@ -1,11 +1,14 @@
 export const userLangStat = async (username: string) => {
   const r = await fetch(`https://api.github.com/users/${username}/repos`)
-  const result = await r.json()
+  const result: IRepoResponse[] = await r.json()
   const datas: LangCount[] = []
   let totalRow = 0
-  for (let i of result) {
-    const rr = await fetch(i.languages_url)
-    const languages = await rr.json()
+
+  const allLang = result.map(async (i) =>
+    fetch(i.languages_url).then((r) => r.json())
+  )
+
+  for (let languages of await Promise.all<any>(allLang)) {
     for (let lang of Object.keys(languages)) {
       const idx = datas.findIndex((x) => x.name === lang)
       totalRow += languages[lang]
@@ -21,6 +24,7 @@ export const userLangStat = async (username: string) => {
       }
     }
   }
+
   const data = datas.map((lang) => {
     return {
       ...lang,
@@ -34,4 +38,8 @@ export const userLangStat = async (username: string) => {
 export interface LangCount {
   name: string
   count: number
+}
+
+interface IRepoResponse {
+  languages_url: string
 }

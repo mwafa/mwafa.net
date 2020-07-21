@@ -35,6 +35,7 @@ export const GithubFollowers: React.FC = () => {
               }}
             >
               <Image
+                alt=""
                 w="50px"
                 h="50px"
                 rounded="full"
